@@ -52,7 +52,7 @@ For more information, please refer to <http://unlicense.org/>
 #undef XASH_ARMv6
 #undef XASH_ARMv7
 #undef XASH_ARMv8
-//#undef XASH_BIG_ENDIAN
+#undef XASH_BIG_ENDIAN
 #undef XASH_BSD
 #undef XASH_E2K
 #undef XASH_EMSCRIPTEN
@@ -70,6 +70,7 @@ For more information, please refer to <http://unlicense.org/>
 #undef XASH_WIN32
 #undef XASH_WIN64
 #undef XASH_X86
+#undef XASH_PPC
 
 //================================================================
 //
@@ -169,6 +170,8 @@ For more information, please refer to <http://unlicense.org/>
 	#define XASH_AMD64 1
 #elif defined(__i386__) || defined(_X86_) || defined(_M_IX86)
 	#define XASH_X86 1
+#elif defined __ppc__
+	#define XASH_PPC 1
 #elif defined __aarch64__ || defined _M_ARM64
 	#define XASH_64BIT 1
 	#define XASH_ARM 8

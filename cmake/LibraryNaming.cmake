@@ -32,6 +32,7 @@ check_symbol_exists(XASH_OPENBSD "build.h" XASH_OPENBSD)
 check_symbol_exists(XASH_WIN32 "build.h" XASH_WIN32)
 check_symbol_exists(XASH_WIN64 "build.h" XASH_WIN64)
 check_symbol_exists(XASH_X86 "build.h" XASH_X86)
+check_symbol_exists(XASH_PPC "build.h" XASH_PPC)
 unset(CMAKE_REQUIRED_INCLUDES)
 
 # engine/common/build.c
@@ -53,6 +54,8 @@ endif()
 
 if(XASH_AMD64)
 	set(BUILDARCH "amd64")
+elseif(XASH_PPC)
+	set(BUILDARCH "ppc")
 elseif(XASH_X86)
 	set(BUILDARCH "")
 elseif(XASH_ARM AND XASH_64BIT)
